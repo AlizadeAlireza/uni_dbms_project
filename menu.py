@@ -17,6 +17,12 @@ class Menu:
         # exit of the program
         print("3, exit of the program")
 
+    # Register_menu
+    def user_register_menu():
+        pass
+    def admin_register_menu():
+        pass
+
 menu = Menu()
 
 # choice = True
