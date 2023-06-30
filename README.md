@@ -1,6 +1,6 @@
 functions : 
 
-1, connection 
+1, connection  ---> finished
 
 2, create tables
 
@@ -45,13 +45,47 @@ functions :
 
 ### main menu
 
-1. welcome masseage
+0. welcome masseage :
 
-2. help/about
+    is a text in main menu
 
-3. student panel
+1. Register : 
 
-4. admin panel
+    1. name
+    2. last name
+    3. phone_number
+    4. student_id
+    5. year
+    6. back to main menu
+
+2. help/about :
+
+    a script that have text
+    
+    1. back to main menu
+
+3. student panel :
+
+    1. show the COT table ---> for see the courses:
+        - back to student panel
+    2. show the student information:
+        - back to student panel
+    3. student STCOT for every course std has:
+        - back to student panel
+    4. average :
+        - calculate 
+        - by terms
+        - by all 
+        - back to student panel
+    
+    5. getting courses: adding to STCOT ---> condition : 
+
+    6. back to main menu
+
+4. admin panel :
+
+    1. 
+
 
 5. exit
     
