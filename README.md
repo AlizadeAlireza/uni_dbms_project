@@ -43,13 +43,15 @@ functions :
 
 ## options
 
-### main menu
-
+###  menus
 0. welcome masseage :
 
     is a text in main menu
 
 1. Register : 
+
+    validation ---> if exict ----> enter 
+    if not exict ----> "text : invalid"  ///// error handle
 
     1. name
     2. last name
@@ -58,33 +60,37 @@ functions :
     5. year
     6. back to main menu
 
+        1. student panel :
+
+            1. show the COT table ---> for see the courses:
+                - back to student panel
+            2. show the student information:
+                - back to student panel
+            3. student STCOT for every course std has:
+                - back to student panel
+            4. average :
+                - calculate 
+                - by terms
+                - by all 
+                - back to student panel
+            
+            5. getting courses: adding to STCOT ---> condition : 
+
+            6. back to main menu
+
+        4. admin panel : ----> create table and fetch to get the validation
+
+    1. 
+
+
 2. help/about :
 
     a script that have text
     
     1. back to main menu
 
-3. student panel :
 
-    1. show the COT table ---> for see the courses:
-        - back to student panel
-    2. show the student information:
-        - back to student panel
-    3. student STCOT for every course std has:
-        - back to student panel
-    4. average :
-        - calculate 
-        - by terms
-        - by all 
-        - back to student panel
-    
-    5. getting courses: adding to STCOT ---> condition : 
 
-    6. back to main menu
-
-4. admin panel :
-
-    1. 
 
 
 5. exit
