@@ -7,6 +7,7 @@ import pyodbc
 
 # connection function 
 def connection_to_db ():
+    
     # connection details
     server = "MSI"
     database = "uni_project"

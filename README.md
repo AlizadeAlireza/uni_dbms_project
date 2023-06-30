@@ -32,3 +32,27 @@ functions :
 
 ## menu
 
+## user terminal interface
+
+### abstract
+    1. option choosing :
+        can select an option
+
+    2. back to main menu: 
+        can back to recent menu
+
+## options
+
+### main menu
+
+1. welcome masseage
+
+2. help/about
+
+3. student panel
+
+4. admin panel
+
+5. exit
+    
+
