@@ -2,9 +2,20 @@ functions :
 
 1, connection  ---> finished
 
+    we can say first check the connection test.
+    if we had an error we can handle it and work with the new mistakes.
+    
+    but if we have a true connection, we can continue.
+
 2, create tables
 
 3, getting value
+
+3.5, user class :
+    1. regular user
+    2. super user 
+
+` i think reg user can use UserClass and super user can have more abilities.`
 
 4, menu
 
@@ -87,7 +98,7 @@ functions :
             6. if average() ---> student number
             7. back to main menu
 
-        
+
 
 
 2. help/about :

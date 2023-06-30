@@ -3,9 +3,11 @@
 # imports
 import pyodbc
 
-# connection function 
-def connection_to_db ():
-    def test_connection():
+# connection function
+
+# Connection
+class Connection:
+    def connection_test(self):
         # connection details
         server = "MSI"
         database = "uni_project"
@@ -38,7 +40,11 @@ def connection_to_db ():
             print("Connection failed!")
             print(f"Error message: {str(e)}")
 
-def main():
-    connection_to_db ()
+   
 
-main()
+
+# call the connection
+connection = Connection()
+# call
+# print(type(connection))
+connection.connection_test()
