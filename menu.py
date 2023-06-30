@@ -18,4 +18,17 @@ class Menu:
         print("3, exit of the program")
 
 menu = Menu()
-main_menu = menu.main_menu()
+
+# choice = True
+while True:
+    menu.main_menu()
+
+    choice = int(input("\nplease enter your option: "))
+
+    if choice == 1:
+        print("test -> you choose register  ")
+    elif choice == 2:
+        print("test -> you choose help/about  ")
+    elif choice == 3:
+        print("\n*** good luck ***")
+        break
