@@ -69,7 +69,7 @@ Objects :
 
 1. Register : 
 
-    for this if we are user our options can be different with admin panel.
+    for this if we are user, our options can be different with admin panel.
 
     like add and edit for admin.
     but user can't see this things.
@@ -116,6 +116,8 @@ Objects :
     a script that have text
     
     1. back to main menu
+
+set the invalid choices.
 
 5. exit
     

@@ -4,9 +4,6 @@
 
 '''
 
-from atexit import register
-
-
 class Menu:
     ## main menu
     def main_menu(self):
@@ -32,15 +29,28 @@ class Menu:
     # user register menu
     def user_register_menu(self):
         print("\n *** student panel ***\n")
-        print("")
-        print("")
-        print(". back to register menu")    
+        print("1. see the available courses")
+        print("2. show the informations")
+        print("3. select the course")
+        print("4. remove the course (only in term)")
+        print("5. edit the choosen courses")
+        print("6. getting average by all terms")
+        print("7. getting average by current term")
+        print("8. back to register menu")    
     # admin register menu
     def admin_register_menu(self):
         print("\n *** admin panel ***\n")
-        print("")
-        print("")
-        print(". back to register menu")    
+        print(". see the available courses")
+        print(". add course")
+        print(". remove the course")
+        print(". show the student information") # can have another options
+        print(". select the course for student")
+        print(". remove the course from student program")
+        print(". remove the student ")
+        print(". add student")
+        print(". getting student average by all terms")
+        print(". getting student average by current term")
+        print("11. back to register menu")    
 
 
 # create instance of class
@@ -57,19 +67,31 @@ while True:
     # choosing system
     if choice == 1: # REGISTER
         print("\ngoing to register menu...")
-        menu.register_menu()
         while True:
+            menu.register_menu()
             choice = int(input("\nplease enter your position: "))
             if choice == 1:
+                print("\ngoing to admin panel..")
                 menu.admin_register_menu()
+                while True:
+                    choice = int(input("\nplease enter your option: "))
+                    if choice == 11:
+                        print("\nback to register menu...")
+                        break
             elif choice == 2:
+                print("\ngoing to user panel..")
                 menu.user_register_menu()
+                while True:
+                    choice = int(input("\nplease enter your option: "))
+                    if choice == 8:
+                        print("\nback to register menu...")
+                        break
             elif choice == 3:
                 # back to main menu
-                print("\ngoing to main menu...")
+                print("\nback to main menu...")
                 break
             
-    elif choice == 2:
+    elif choice == 2: # HELP/ABOUT
         print("test -> you choose help/about  ")
     elif choice == 3:
         print("\n*** good luck ***")
