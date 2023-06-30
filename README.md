@@ -64,7 +64,15 @@ Objects :
 
     is a text in main menu
 
+
+
+
 1. Register : 
+
+    for this if we are user our options can be different with admin panel.
+
+    like add and edit for admin.
+    but user can't see this things.
 
     validation ---> if exict ----> enter 
     if not exict ----> "text : invalid"  ///// error handle

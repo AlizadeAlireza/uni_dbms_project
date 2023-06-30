@@ -21,12 +21,16 @@ menu = Menu()
 
 # choice = True
 while True:
+    # call the main menu
     menu.main_menu()
 
+    # get the choice
     choice = int(input("\nplease enter your option: "))
 
-    if choice == 1:
-        print("test -> you choose register  ")
+    # choosing system
+    if choice == 1: # REGISTER
+        while True:
+            pass
     elif choice == 2:
         print("test -> you choose help/about  ")
     elif choice == 3:
