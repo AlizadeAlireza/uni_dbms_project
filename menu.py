@@ -31,11 +31,17 @@ class Menu:
     
     # user register menu
     def user_register_menu(self):
-        print("test for user menu")
-    
+        print("\n *** student panel ***\n")
+        print("")
+        print("")
+        print(". back to register menu")    
     # admin register menu
     def admin_register_menu(self):
-        print("test for amin menu")
+        print("\n *** admin panel ***\n")
+        print("")
+        print("")
+        print(". back to register menu")    
+
 
 # create instance of class
 menu = Menu()
