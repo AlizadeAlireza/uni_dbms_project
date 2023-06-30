@@ -1,4 +1,4 @@
-functions : 
+Objects : 
 
 1, connection  ---> finished
 
@@ -9,6 +9,12 @@ functions :
 
 2, create tables
 
+    for this i have a new idea.
+    if we have a tables class we can define some functions like add, delete, edit and ...
+
+    a user can inherit this options and super user or regular user can use it.
+
+    so create tables can be just a part of this sections.
 3, getting value
 
 3.5, user class :

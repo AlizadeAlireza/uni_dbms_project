@@ -3,7 +3,6 @@
 # imports
 import pyodbc
 
-# connection function
 
 # Connection
 class Connection:
@@ -16,7 +15,7 @@ class Connection:
 
         # create connection with f String --> f""
         connection_string = f"Driver={{SQL Server}};Server={server};Database={database};Trusted_Connection=yes"
-        #     stablish connection
+        # stablish connection
         # to ensure is connected!!
 
         try: 
