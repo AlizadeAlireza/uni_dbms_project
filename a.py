@@ -17,7 +17,6 @@ class Connection:
         connection_string = f"Driver={{SQL Server}};Server={server};Database={database};Trusted_Connection=yes"
         # stablish connection
         # to ensure is connected!!
-
         try: 
             connection = pyodbc.connect(connection_string)
             cursor = connection.cursor()

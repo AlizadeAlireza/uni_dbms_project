@@ -1,13 +1,13 @@
 Objects : 
 
-1, connection  ---> finished
+1, connection  
 
     we can say first check the connection test.
     if we had an error we can handle it and work with the new mistakes.
     
     but if we have a true connection, we can continue.
 
-2, create tables
+2,  tables
 
     for this i have a new idea.
     if we have a tables class we can define some functions like add, delete, edit and ...
@@ -15,9 +15,8 @@ Objects :
     a user can inherit this options and super user or regular user can use it.
 
     so create tables can be just a part of this sections.
-3, getting value
 
-3.5, user class :
+3, user class :
     1. regular user
     2. super user 
 
@@ -104,18 +103,11 @@ Objects :
             6. if average() ---> student number
             7. back to main menu
 
-
-
-
 2. help/about :
 
     a script that have text
     
     1. back to main menu
-
-
-
-
 
 5. exit
     
