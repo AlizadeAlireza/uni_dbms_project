@@ -4,12 +4,15 @@
 
 '''
 
+from atexit import register
+
+
 class Menu:
-    # main menu
+    ## main menu
     def main_menu(self):
         
         # welcome masseage
-        print("\n*** student project ***\n\n  please choose an option (-_-)\n")
+        print("\n*** student project ***\n\n  please choose an option (-_-)\n\n***main menu***\n")
         # Register
         print("1, Register")
         # help about
@@ -17,15 +20,27 @@ class Menu:
         # exit of the program
         print("3, exit of the program")
 
-    # Register_menu
-    def user_register_menu():
-        pass
-    def admin_register_menu():
-        pass
+    ## Register menus
 
+    # main register menu
+    def register_menu(self):
+        print("\n *** register menu ***\n")
+        print("1. admin")
+        print("2. user") # this name can be student
+        print("3. back to main menu")
+    
+    # user register menu
+    def user_register_menu(self):
+        print("test for user menu")
+    
+    # admin register menu
+    def admin_register_menu(self):
+        print("test for amin menu")
+
+# create instance of class
 menu = Menu()
 
-# choice = True
+# create a loop for menu
 while True:
     # call the main menu
     menu.main_menu()
@@ -35,8 +50,19 @@ while True:
 
     # choosing system
     if choice == 1: # REGISTER
+        print("\ngoing to register menu...")
+        menu.register_menu()
         while True:
-            pass
+            choice = int(input("\nplease enter your position: "))
+            if choice == 1:
+                menu.admin_register_menu()
+            elif choice == 2:
+                menu.user_register_menu()
+            elif choice == 3:
+                # back to main menu
+                print("\ngoing to main menu...")
+                break
+            
     elif choice == 2:
         print("test -> you choose help/about  ")
     elif choice == 3:
