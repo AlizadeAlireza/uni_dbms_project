@@ -3,16 +3,30 @@
 # imports
 import pyodbc
 
-# connection details
-server = "MSI"
-database = "uni_project"
-username = "MSI\pc"
-password = ""
 
-# create connection with f String --> f""
-connection_string = f"Driver={{SQL Server}};Server={server};Database={database};Trusted_Connection=yes"
+
+# connection function 
+def connection_to_db ():
+    # connection details
+    server = "MSI"
+    database = "uni_project"
+    username = "MSI\pc"
+    password = ""
+
+    # create connection with f String --> f""
+    connection_string = f"Driver={{SQL Server}};Server={server};Database={database};Trusted_Connection=yes"
+
+
+
+
+
+
+
+
 
 # stablish connection
+# to ensure is connected!!
+
 
 # try: 
 #     connection = pyodbc.connect(connection_string)
