@@ -68,7 +68,7 @@ functions :
                 - back to student panel
             3. student STCOT for every course std has:
                 - back to student panel
-            4. average :
+            4. average : getting arument
                 - calculate 
                 - by terms
                 - by all 
@@ -79,8 +79,15 @@ functions :
             6. back to main menu
 
         4. admin panel : ----> create table and fetch to get the validation
+            1. admin information
+            2. add course 
+            3. add professor
+            4. add student 
+            5. show : student informations, professor information, STCOT
+            6. if average() ---> student number
+            7. back to main menu
 
-    1. 
+        
 
 
 2. help/about :
