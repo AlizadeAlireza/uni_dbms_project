@@ -33,14 +33,14 @@ class Menu:
         print("2. show the informations")
         print("3. select the course")
         print("4. remove the course (only in term)")
-        print("5. edit the choosen courses")
+        # print("5. edit the choosen courses")
         print("6. getting average by all terms")
         print("7. getting average by current term")
         print("8. back to register menu")    
     # admin register menu
     def admin_register_menu(self):
         print("\n *** admin panel ***\n")
-        print(". see the available courses")
+        print("1. see the available courses")
         print(". add course")
         print(". remove the course")
         print(". show the student information") # can have another options

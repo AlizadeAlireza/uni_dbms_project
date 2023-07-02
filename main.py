@@ -3,6 +3,7 @@
 from menu import Menu
 from register import Register
 from tables import create_table
+from abilities import Abilitiy, AdminAbility, StudentAbility
 
 def main():
 
