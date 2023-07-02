@@ -1,10 +1,11 @@
 # imports
-
+import msvcrt
 from menu import Menu
 from register import Register, AdminRegister, StudentRegister
 from tables import create_table
 from abilities import Abilitiy, AdminAbility, StudentAbility
 from users import Admin
+from helper_script import help, about
 
 def main():
 
@@ -57,11 +58,25 @@ def main():
                     break
                 
         elif choice == 2: # HELP/ABOUT
-            print("\n going to user panel... ")
+            print("\n going to help/about page... ")
             menu.help_about_menu()
             while True:
-                if choice == 3:
+                choice = int(input("\nplease enter your option: "))
+                if choice == 1:
+                    print(help())
+                    print("\npress any key to help/about menu...", end = "", flush = True)
+                    msvcrt.getch()
+                    menu.help_about_menu()
+                    # press any key to going to help/about page
+                    # hint : i can use a function
+                elif choice == 2:
+                    print(about())
+                    print("\npress any key to help/about menu...", end = "", flush = True)
+                    msvcrt.getch()
+                    menu.help_about_menu()
+                elif choice == 3:
                     print("\nback to main menu...")
+                    break
 
                 
         elif choice == 3:

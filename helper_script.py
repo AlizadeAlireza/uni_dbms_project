@@ -15,3 +15,10 @@ def department_id():
         return "there is no such DEPARTMENT!"
     
 
+def help():
+    a = "\nthis is a test for our help function to show that." 
+    return a
+
+def about():
+    a = "\nthis is a test for our about function to show that."
+    return a
