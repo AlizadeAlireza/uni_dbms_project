@@ -13,7 +13,7 @@ def create_table():
 def create_tables():
     # Connection details
     server = "MSI"
-    database = "uni_project"
+    database = "uni__project"
 
     # Create connection string
     connection_string = f"Driver={{SQL Server}};Server={server};Database={database};Trusted_Connection=yes"
@@ -26,15 +26,17 @@ def create_tables():
     create_table_queries = [
     """
     CREATE TABLE STT (
-        STID CHAR(10) NOT NULL PRIMARY KEY,
-        STName VARCHAR(100),
-        STNJR CHAR(20),
+        STID CHAR(20) NOT NULL PRIMARY KEY,
+        STName CHAR(100),
+        STMJR CHAR(20),
+        STLev CHAR(20),
         STDEID CHAR(20)
     )
     """,
     """
-    CREATE TABLE COT (
-        COID CHAR(10) NOT NULL PRIMARY KEY,
+   CREATE TABLE COT (
+        COID CHAR(20) NOT NULL PRIMARY KEY,
+		CODEID CHAR(20),
         COTitle VARCHAR(100),
         Credit INT,
         COtype CHAR(20)
@@ -42,8 +44,8 @@ def create_tables():
     """,
     """
     CREATE TABLE STCOT (
-        STID CHAR(10),
-        COID CHAR(10),
+        STID CHAR(20),
+        COID CHAR(20),
         TR INT,
         YRYR INT,
         Grade FLOAT,
@@ -54,40 +56,42 @@ def create_tables():
     """,
     """
     CREATE TABLE PREREQ (
-        COID CHAR(10),
-        PRECOID CHAR(10) PRIMARY KEY,
+        COID CHAR(20),
+        PRECOID CHAR(20),
+		PRIMARY KEY (COID, PRECOID),
         FOREIGN KEY (COID) REFERENCES COT(COID)
     )
     """,
     """
-    CREATE TABLE DEPT (
-        MGRID CHAR(10),
-        DEID CHAR(10) NOT NULL PRIMARY KEY,
-        DEtitle VARCHAR(100),
-        phone CHAR(12),
-        address VARCHAR(200),
-        FOREIGN KEY (MGRID) REFERENCES PROF(PRID)
+    CREATE TABLE DEPT(
+	DEID CHAR(20) NOT NULL PRIMARY KEY,
+	MGRID CHAR(20),
+    DEtitle varchar(100),
+    phone char(12),
+    address varchar(200),
     )
-    """,
+    """
+      ,
     """
     CREATE TABLE PROF (
-        PRID CHAR(10) NOT NULL PRIMARY KEY,
+        PRID CHAR(20) NOT NULL PRIMARY KEY,
         PRname VARCHAR(100),
         RANKK CHAR(20),
-        DEID CHAR(10),
+        DEID CHAR(20),
         FOREIGN KEY (DEID) REFERENCES DEPT(DEID)
     )
     """,
     """
     CREATE TABLE PRCO (
-        PRID CHAR(10),
-        COID CHAR(10),
+        PRID CHAR(20),
+        COID CHAR(20),
         GROUP_ID CHAR(10),
         PRIMARY KEY (PRID, COID, GROUP_ID),
         FOREIGN KEY (PRID) REFERENCES PROF(PRID),
         FOREIGN KEY (COID) REFERENCES COT(COID)
     )
     """
+    
 ]
 
     try:
@@ -108,64 +112,3 @@ create_tables()
 
 
 
-
-"""
-CREATE DATABASE uni;
-
-CREATE TABLE STT (
-	STID CHAR(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    STName VARCHAR(100),
-    STNJR char(20),
-    STDEID char(20)
-);
-
-CREATE TABLE COT (
-	COID CHAR(20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    COTitle VARCHAR(100),
-    Credit INT,
-    COtype CHAR(20)
-);
-
-CREATE TABLE STCOT (
-	STID CHAR(10),
-    COID CHAR(10),
-    TR INT PRIMARY KEY,
-    YRYR INT PRIMARY KEY,
-    Grade Float,
-    foreign key(STID) references STT(STID),
-    foreign key(COID) references COT(COID)
-);
-
-CREATE TABLE PREREQ(
-	COID CHAR(10),
-    PRECOID CHAR(10) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    foreign key(COID) references COT(COID)
-);
-
-CREATE TABLE DEPT(
-	MGRID CHAR(10),
-	DEID CHAR(10)  NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    DEtitle varchar(100),
-    phone char(12),
-    address varchar(200),
-    foreign key(MGRID) references PROF(PRID)
-    
-);
-
-CREATE TABLE PROF(
-	PRID char(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    PRname varchar(100),
-    RANKK char(20),
-	DEID CHAR(10),
-    foreign key (DEID) references DEPT(DEID)
-);
-
-CREATE TABLE PRCO(
-	PRID char(10) PRIMARY KEY,
-    COID char(10) PRIMARY KEY,
-    GROUP_ID char(10) PRIMARY KEY,
-    foreign key (PRID) references PROF(PRID),
-    foreign key (COID) references COT(COID)
-);
-
-"""
