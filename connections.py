@@ -9,7 +9,7 @@ class Connection:
     def connection_test(self):
         # connection details
         server = "MSI"
-        database = "uni_project"
+        database = "uni__project"
         # username = "MSI\pc"
         # password = ""
 
@@ -38,7 +38,29 @@ class Connection:
             print("Connection failed!")
             print(f"Error message: {str(e)}")
 
+    def _open(self):
+        server = "MSI"
+        database = "uni__project"
+        connection_string = f"Driver={{SQL Server}};Server={server};Database={database};Trusted_Connection=yes"
+        
+        try: 
+            connection = pyodbc.connect(connection_string)
+            cursor = connection.cursor()
+            return cursor, connection
+        except pyodbc.Error as e:
+            print("Connection failed!")
+            print(f"Error message: {str(e)}")
+    
+    def _close(self,cursor, connection):
+        cursor.close()
+        connection.close()
+
    
+    def _execute(self, cursor, connection, query, values):
+       cursor.execute(query, values)
+       connection.commit()
+       
+
 
 
 # call the connection

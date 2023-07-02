@@ -1,15 +1,15 @@
 # imports
 
 from menu import Menu
-from register import Register
+from register import Register, AdminRegister, StudentRegister
 from tables import create_table
 from abilities import Abilitiy, AdminAbility, StudentAbility
+from users import Admin
 
 def main():
 
     # create instance of classes
     menu = Menu()
-    register = Register()
 
     # create a loop for menu
     while True:
@@ -30,8 +30,9 @@ def main():
                     # get the pass and name
                     username = input(" please enter your userName: ")
                     password = input(" please enter your pass: ")
-
-                    valid_admin = register.admin_validate()
+                    # admin instance
+                    admin = Admin(username, password)
+                    valid_admin = admin.admin_validate()
                     if valid_admin == True:
                         print("\ngoing to admin panel..")
                         menu.admin_register_menu()
