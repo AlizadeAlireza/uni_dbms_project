@@ -1,5 +1,3 @@
-
-
 class Abilitiy:
     # a = "for student"
     def available_courses(self):
@@ -21,6 +19,8 @@ class AdminAbility(Abilitiy):
     def add_course(self):
         pass
     def add_student(self):
+        pass
+    def add_professor(self):
         pass
 
 class StudentAbility(Abilitiy):

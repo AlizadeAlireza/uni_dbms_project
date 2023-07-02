@@ -27,6 +27,10 @@ def main():
                 choice = int(input("\nplease enter your position: "))
                 if choice == 1:
                     print("\n*** SIGN IN ***\n")
+                    # get the pass and name
+                    username = input(" please enter your userName: ")
+                    password = input(" please enter your pass: ")
+
                     valid_admin = register.admin_validate()
                     if valid_admin == True:
                         print("\ngoing to admin panel..")
