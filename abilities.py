@@ -23,6 +23,32 @@ class AdminAbility(Abilitiy):
         pass
     def add_course(self):
         pass
+    
+    def get_max_student_id(self):
+        server = "MSI"
+        database = "uni__project"
+        connection_string = f"Driver={{SQL Server}};Server={server};Database={database};Trusted_Connection=yes"
+
+        try:
+            query = "SELECT MAX(STID) FROM STT"
+
+            connection = pyodbc.connect(connection_string)
+            cursor = connection.cursor()
+
+            cursor.execute(query)
+            result = cursor.fetchone()
+
+            cursor.close()
+            connection.close()
+
+            max_id = result[0] if result[0] else 0
+            return max_id
+
+        except pyodbc.Error as e:
+            print("Error retrieving max student ID!")
+            print(f"Error message: {str(e)}")
+            return None
+
 
     def add_student(self):
         database_connection = Connection()
