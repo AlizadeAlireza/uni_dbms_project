@@ -106,6 +106,7 @@ def create_tables():
     # Close the cursor and connection
     cursor.close()
     connection.close()
+    # end of function
 
 # Call the function to create the tables
 create_tables()
