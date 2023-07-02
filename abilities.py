@@ -73,5 +73,5 @@ class AdminAbility(Abilitiy):
 class StudentAbility(Abilitiy):
     pass
 
-b = AdminAbility()
-print(b.add_student())
+# b = AdminAbility()
+# print(b.add_student())

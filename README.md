@@ -114,8 +114,12 @@ Objects :
 2. help/about :
 
     a script that have text
+
+    can have a menu
     
-    1. back to main menu
+    1. help 
+    2. about
+    3. back to main menu
 
 set the invalid choices.
 

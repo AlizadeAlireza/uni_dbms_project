@@ -57,7 +57,13 @@ def main():
                     break
                 
         elif choice == 2: # HELP/ABOUT
-            print("test -> you choose help/about  ")
+            print("\n going to user panel... ")
+            menu.help_about_menu()
+            while True:
+                if choice == 3:
+                    print("\nback to main menu...")
+
+                
         elif choice == 3:
             print("\n*** good luck ***")
             break    
