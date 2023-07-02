@@ -52,4 +52,8 @@ class Menu:
         print(". getting student average by current term")
         print("11. back to register menu")    
 
-
+    def help_about_menu(self):
+        print("\n *** help/about menu ***\n")
+        print("1. help")
+        print("2. about")
+        print("3. back to main menu")
