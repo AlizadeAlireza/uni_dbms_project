@@ -29,21 +29,9 @@ class Abilitiy:
         database_connection._close(cursor,connection)
 
         # user can delete the course that select ---> delete from STCOT
-    def total_average(self):
-        database_connection = Connection()
-        query = f""" select STT.STNAME,STT.STID,
-            sum(STCOT.Grade*COT.CREDIT)/sum(COT.CREDIT) as AVE from
-            STT,COT,STCOT
-            where STT.STID = STCOT.STID  and COT.COID = STCOT.COID
-            group by STT.STNAME,STT.STID """
-
-
-        cursor, connection = database_connection._open()
-        database_connection._execute(cursor, connection, query, "")
-        database_connection._fetch(cursor)
-        database_connection._close(cursor,connection)
+    
         
-    def term_average(self, student_id):
+    def student_average(self, student_id):
         database_connection = Connection()
         query = f""" select STT.STNAME,STT.STID,
             sum(STCOT.Grade*COT.CREDIT)/sum(COT.CREDIT) as AVE from
@@ -103,10 +91,34 @@ class AdminAbility(Abilitiy):
         pass
         # like add student we 
         # pass the elemnts and execute the query
+
+    def total_average(self):
+        database_connection = Connection()
+        query = f""" select STT.STNAME,STT.STID,
+            sum(STCOT.Grade*COT.CREDIT)/sum(COT.CREDIT) as AVE from
+            STT,COT,STCOT
+            where STT.STID = STCOT.STID  and COT.COID = STCOT.COID
+            group by STT.STNAME,STT.STID """
+
+
+        cursor, connection = database_connection._open()
+        database_connection._execute(cursor, connection, query, "")
+        database_connection._fetch(cursor)
+        database_connection._close(cursor,connection)
+
+    def remove_student(self, student_id):
+        database_connection = Connection()
+
+         # hint : helper function
+        delete_query = "DELETE FROM STT WHERE STT.STID = ?"
+        values = (student_id)
+        cursor, connection = database_connection._open()
+        database_connection._execute(cursor, connection, delete_query, values)
+        database_connection._close(cursor,connection)
     
 
 class StudentAbility(Abilitiy):
     pass
 
-# b = AdminAbility()
-# print(b.term_average(2))
+b = AdminAbility()
+print(b.remove_student(1))

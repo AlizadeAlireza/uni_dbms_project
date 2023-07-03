@@ -41,7 +41,41 @@ def main():
                     
                     while True:
                         choice = int(input("\nplease enter your option: "))
-                        if choice == 11:
+                        if choice == 1:
+                            admin.available_courses()
+                            menu.admin_register_menu()
+                        elif choice == 2:
+                            admin.add_course()
+                            menu.admin_register_menu()
+                        elif choice == 3:
+                            admin.remove_default_course()
+                            menu.admin_register_menu()
+                        elif choice == 4:
+                            admin.student_information()
+                            menu.admin_register_menu()
+                        elif choice == 5:
+                            student_id = int(input("\nenter student id: "))
+                            admin.select_course(student_id)
+                            menu.admin_register_menu()
+                        elif choice == 6:
+                            student_id = int(input("\nenter student id: "))
+                            admin.remove_course(student_id)
+                            menu.admin_register_menu()
+                        elif choice == 7:
+                            student_id = int(input("\nenter student id: "))
+                            admin.remove_course(student_id)
+                            menu.admin_register_menu()
+                        elif choice == 8:
+                            admin.add_student()
+                            menu.admin_register_menu()
+                        elif choice == 9:
+                            admin.total_average()
+                            menu.admin_register_menu()
+                        elif choice == 10:
+                            student_id = int(input("\nenter student id: "))
+                            admin.student_average(student_id)
+                            menu.admin_register_menu()
+                        elif choice == 11:
                             print("\nback to register menu...")
                             break
                 elif choice == 2:
@@ -58,20 +92,21 @@ def main():
                     while True:
                         choice = int(input("\nplease enter your option: "))
                         if choice == 1:
-                            pass
+                            user.available_courses()
+                            menu.user_register_menu()
                         elif choice == 2:
-                            pass
+                            user.student_information()
+                            menu.user_register_menu()
                         elif choice == 3:
-                            pass
+                            user.select_course(user_id)
+                            menu.user_register_menu()
                         elif choice == 4:
-                            pass
+                            user.remove_course(user_id)
+                            menu.user_register_menu()
                         elif choice == 5:
-                            pass
+                            user.student_average()
+                            menu.user_register_menu()
                         elif choice == 6:
-                            pass
-                        elif choice == 7:
-                            pass
-                        elif choice == 8:
                             print("\nback to register menu...")
                             break
                 elif choice == 3:
