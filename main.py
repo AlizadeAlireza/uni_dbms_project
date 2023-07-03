@@ -4,7 +4,7 @@ from menu import Menu
 from register import Register, AdminRegister, StudentRegister
 from tables import create_table
 from abilities import Abilitiy, AdminAbility, StudentAbility
-from users import Admin
+from users import Admin, Student
 from helper_script import help, about
 
 def main():
@@ -45,11 +45,33 @@ def main():
                             print("\nback to register menu...")
                             break
                 elif choice == 2:
-                    print("\ngoing to user panel..")
-                    menu.user_register_menu()
+                    print("\n*** SIGN IN USER ***\n")
+                    # get the pass and name
+                    username = input(" please enter your userName: ")
+                    password = input(" please enter your pass: ")
+
+                    user = Student(username, password)
+                    valid_user, user_id = user.student_validate()
+                    if valid_user == True:
+                        print("\ngoing to user panel..")
+                        menu.user_register_menu()
                     while True:
                         choice = int(input("\nplease enter your option: "))
-                        if choice == 8:
+                        if choice == 1:
+                            pass
+                        elif choice == 2:
+                            pass
+                        elif choice == 3:
+                            pass
+                        elif choice == 4:
+                            pass
+                        elif choice == 5:
+                            pass
+                        elif choice == 6:
+                            pass
+                        elif choice == 7:
+                            pass
+                        elif choice == 8:
                             print("\nback to register menu...")
                             break
                 elif choice == 3:

@@ -108,5 +108,5 @@ class AdminAbility(Abilitiy):
 class StudentAbility(Abilitiy):
     pass
 
-b = AdminAbility()
-print(b.term_average(2))
+# b = AdminAbility()
+# print(b.term_average(2))

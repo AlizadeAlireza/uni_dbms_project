@@ -39,6 +39,5 @@ class UserShow(Show):
     pass
 
 
-show = AdminShow()
-show.available_courses
-()
+# show = AdminShow()
+# show.available_courses()

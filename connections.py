@@ -72,7 +72,7 @@ class Connection:
 
 
 # call the connection
-connection = Connection()
-# call
-# print(type(connection))
-connection.connection_test()
+# connection = Connection()
+# # call
+# # print(type(connection))
+# connection.connection_test()
