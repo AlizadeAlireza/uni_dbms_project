@@ -13,7 +13,8 @@ class Show:
         database_connection._fetch(cursor)
         database_connection._close(cursor,connection)
         # it is about fetching all the cources and print it
-    def show_informations(self):
+
+    def student_information(self):
         database_connection = Connection()
         value = int(input("\n enter the student ID: "))
         query = f"SELECT * FROM STT WHERE STT.STID = {value}"
@@ -37,5 +38,7 @@ class AdminShow(Show):
 class UserShow(Show):
     pass
 
+
 show = AdminShow()
-show.available_courses()
+show.available_courses
+()

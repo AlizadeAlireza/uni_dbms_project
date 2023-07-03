@@ -1,27 +1,61 @@
 from helper_script import department_id, lesson_type
 from connections import Connection
-import pyodbc
 
 class Abilitiy:
-    # a = "for student"
-    
-        # maybe i delete this
-        # maybe can fetch the row and print the informations
-    def select_course(self):
-        pass
+    def select_course(self, student_id):     #only admin can add the grade 
+        database_connection = Connection()
+
+        lesson_id = int(input("enter lesson ID: "))
+        term = int(input("term : "))
+        year = input(" year : ")
+        grade = input (" grade:  ")
+        
+        query = "INSERT INTO STCOT (STID, COID, TR, YRYR, Grade) VALUES (?,?,?,?,?)"
+        values = (student_id,lesson_id, term, year, grade)
+
+        cursor, connection = database_connection._open()
+        database_connection._execute(cursor, connection, query, values)
+        database_connection._close(cursor,connection)
         # in the available courses
         # user can select the course and submit it in stcot table
-    def remove_course(self):
-        pass
+    def remove_course(self, student_id):
+        database_connection = Connection()
+        lesson_id = int(input("enter lesson ID: "))
+        query = "DELETE from STCOT where STCOT.STID = ? AND STCOT.COID = ?"
+        values = (student_id,lesson_id)
+
+        cursor, connection = database_connection._open()
+        database_connection._execute(cursor, connection, query, values)
+        database_connection._close(cursor,connection)
+
         # user can delete the course that select ---> delete from STCOT
     def total_average(self):
-        pass
-        # it is a query and after execute we can return it
-        # the query get all the grades for that student
-    def term_average(self):
-        pass
-        # it is a query and after execute we can return it
-        # the query get just the term grades for that student
+        database_connection = Connection()
+        query = f""" select STT.STNAME,STT.STID,
+            sum(STCOT.Grade*COT.CREDIT)/sum(COT.CREDIT) as AVE from
+            STT,COT,STCOT
+            where STT.STID = STCOT.STID  and COT.COID = STCOT.COID
+            group by STT.STNAME,STT.STID """
+
+
+        cursor, connection = database_connection._open()
+        database_connection._execute(cursor, connection, query, "")
+        database_connection._fetch(cursor)
+        database_connection._close(cursor,connection)
+        
+    def term_average(self, student_id):
+        database_connection = Connection()
+        query = f""" select STT.STNAME,STT.STID,
+            sum(STCOT.Grade*COT.CREDIT)/sum(COT.CREDIT) as AVE from
+            STT,COT,STCOT
+            where STT.STID = STCOT.STID  and COT.COID = STCOT.COID and STT.STID = {student_id}
+            group by STT.STNAME,STT.STID """
+
+
+        cursor, connection = database_connection._open()
+        database_connection._execute(cursor, connection, query, "")
+        database_connection._fetch(cursor)
+        database_connection._close(cursor,connection)
 
 class AdminAbility(Abilitiy):
     def remove_default_course(self):
@@ -75,4 +109,4 @@ class StudentAbility(Abilitiy):
     pass
 
 b = AdminAbility()
-print(b.remove_default_course())
+print(b.term_average(2))
