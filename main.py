@@ -63,7 +63,7 @@ def main():
                             menu.admin_register_menu()
                         elif choice == 7:
                             student_id = int(input("\nenter student id: "))
-                            admin.remove_course(student_id)
+                            admin.remove_student(student_id)
                             menu.admin_register_menu()
                         elif choice == 8:
                             admin.add_student()
