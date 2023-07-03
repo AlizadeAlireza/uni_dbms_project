@@ -1,4 +1,4 @@
-from helper_script import department_id
+from helper_script import department_id, lesson_type
 from connections import Connection
 import pyodbc
 
@@ -30,13 +30,39 @@ class Abilitiy:
 class AdminAbility(Abilitiy):
     id = 0
     def remove_default_course(self):
-        pass
-        # can drop the row with first fetching and after delete that row
-    def add_course(self):
-        pass
+        database_connection = Connection()
+
         # like add student
         # we pass the parameters in the query 
         # just like add students
+
+         # hint : helper function
+        lesson_id = int(input("\nenter lesson ID : "))
+        delete_query = "DELETE FROM COT WHERE COID = ?"
+        values = (lesson_id)
+
+        cursor, connection = database_connection._open()
+        database_connection._execute(cursor, connection, delete_query, values)
+        database_connection._close(cursor,connection)
+        # can drop the row with first fetching and after delete that row
+    def add_course(self):
+        database_connection = Connection()
+
+        # like add student
+        # we pass the parameters in the query 
+        # just like add students
+        type = lesson_type()
+        de_id = department_id()
+        title = input(" title : ")
+        credit = input (" credit ")
+        
+        query = "INSERT INTO COT (CODEID, CoTitle, Credit, COtype) VALUES (?,?,?,?)"
+        values = (de_id, title, credit, type)
+
+        cursor, connection = database_connection._open()
+        database_connection._execute(cursor, connection, query, values)
+        database_connection._close(cursor,connection)
+
     def add_student(self):
         database_connection = Connection()
 
@@ -45,7 +71,7 @@ class AdminAbility(Abilitiy):
         major = input (" major ")
         level = input (" bs / phd / ms ") # hint : helper function
         de_id = department_id()
-        query = "INSERT INTO STT (STID, STName, STMJR, STLev, STDEID) VALUES (?,?,?,?,?)"
+        query = "INSERT INTO STT (STName, STMJR, STLev, STDEID) VALUES (?,?,?,?)"
         values = (name, major, level, de_id)
 
         cursor, connection = database_connection._open()
@@ -62,5 +88,5 @@ class AdminAbility(Abilitiy):
 class StudentAbility(Abilitiy):
     pass
 
-# b = AdminAbility()
-# print(b.add_student())
+b = AdminAbility()
+print(b.remove_default_course())

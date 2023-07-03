@@ -14,6 +14,16 @@ def department_id():
     except:
         return "there is no such DEPARTMENT!"
     
+def lesson_type():
+    type = input("amali / nazari" )
+    try:
+        if type == "amali":
+            lesson_type = "amali"
+        elif type == "nazari":
+            lesson_type = "nazari"
+        return lesson_type
+    except:
+        return "there is no such DEPARTMENT!"
 
 def help():
     a = "\nthis is a test for our help function to show that." 
