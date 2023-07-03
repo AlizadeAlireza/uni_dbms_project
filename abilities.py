@@ -106,19 +106,19 @@ class AdminAbility(Abilitiy):
         database_connection._fetch(cursor)
         database_connection._close(cursor,connection)
 
-    def remove_student(self, student_id):
-        database_connection = Connection()
+    # def remove_student(self, student_id):
+    #     database_connection = Connection()
 
-         # hint : helper function
-        delete_query = "DELETE FROM STT WHERE STT.STID = ?"
-        values = (student_id)
-        cursor, connection = database_connection._open()
-        database_connection._execute(cursor, connection, delete_query, values)
-        database_connection._close(cursor,connection)
+    #      # hint : helper function
+    #     delete_query = "DELETE FROM STT WHERE STT.STID = ?"
+    #     values = (student_id)
+    #     cursor, connection = database_connection._open()
+    #     database_connection._execute(cursor, connection, delete_query, values)
+    #     database_connection._close(cursor,connection)
     
 
 class StudentAbility(Abilitiy):
     pass
 
-b = AdminAbility()
-print(b.remove_student(1))
+# b = AdminAbility()
+# print(b.remove_student(1))

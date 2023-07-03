@@ -104,7 +104,7 @@ def main():
                             user.remove_course(user_id)
                             menu.user_register_menu()
                         elif choice == 5:
-                            user.student_average()
+                            user.student_average(user_id)
                             menu.user_register_menu()
                         elif choice == 6:
                             print("\nback to register menu...")

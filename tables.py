@@ -103,7 +103,7 @@ def create_tables():
     # end of function
 
 # Call the function to create the tables
-create_tables()
+# create_tables()
 
 
 
