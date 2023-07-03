@@ -4,11 +4,7 @@ import pyodbc
 
 class Abilitiy:
     # a = "for student"
-    def available_courses(self):
-        pass
-        # it is about fetching all the cources and print it
-    def show_informations(self):
-        pass
+    
         # maybe i delete this
         # maybe can fetch the row and print the informations
     def select_course(self):
@@ -28,13 +24,8 @@ class Abilitiy:
         # the query get just the term grades for that student
 
 class AdminAbility(Abilitiy):
-    id = 0
     def remove_default_course(self):
         database_connection = Connection()
-
-        # like add student
-        # we pass the parameters in the query 
-        # just like add students
 
          # hint : helper function
         lesson_id = int(input("\nenter lesson ID : "))
@@ -48,9 +39,6 @@ class AdminAbility(Abilitiy):
     def add_course(self):
         database_connection = Connection()
 
-        # like add student
-        # we pass the parameters in the query 
-        # just like add students
         type = lesson_type()
         de_id = department_id()
         title = input(" title : ")
@@ -66,7 +54,6 @@ class AdminAbility(Abilitiy):
     def add_student(self):
         database_connection = Connection()
 
-        # id = str(self.id)
         name = input(" name : ")
         major = input (" major ")
         level = input (" bs / phd / ms ") # hint : helper function
@@ -77,13 +64,12 @@ class AdminAbility(Abilitiy):
         cursor, connection = database_connection._open()
         database_connection._execute(cursor, connection, query, values)
         database_connection._close(cursor,connection)
-
-        # self.id += 1   #error id is not correct !!
         
     def add_professor(self):
         pass
         # like add student we 
         # pass the elemnts and execute the query
+    
 
 class StudentAbility(Abilitiy):
     pass

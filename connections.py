@@ -57,10 +57,18 @@ class Connection:
 
    
     def _execute(self, cursor, connection, query, values):
-       cursor.execute(query, values)
-       connection.commit()
-       
 
+        if values != "":
+            cursor.execute(query, values)       
+            connection.commit()
+        else:  
+            cursor.execute(query)
+    
+    def _fetch(self, cursor):
+
+        rows = cursor.fetchall()
+        for row in rows:
+            print(row)
 
 
 # call the connection
