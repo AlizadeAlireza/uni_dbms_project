@@ -57,12 +57,47 @@ def lesson_type():
         print("\nthere is no such lesson type!")
 
 def help():
-    a = "\nthis is a test for our help function to show that." 
+    help_text = """\nUniversity Project Management System Help
+    
+    Welcome to the University Project Management System! This system provides functionalities for administrators and students to manage courses, enrollment, and grading. Below is a list of available commands and their descriptions:
+    
+    1. help: Display this help message.
+    2. about: Display information about the project.
+    3. exit: Exit the program.
+    
+    Admin Commands:
+    4. available_courses: Display the list of available courses.
+    5. add_course: Add a new course to the system.
+    6. remove_default_course: Remove a default course from the system.
+    7. student_information: View information about a specific student.
+    8. select_course: Select a course for a student.
+    9. remove_course: Remove a course from a student's selection.
+    10. remove_student: Remove a student from the system.
+    11. add_student: Add a new student to the system.
+    12. total_average: Calculate the total average grade of all students.
+    13. student_average: Calculate the average grade of a specific student.
+    
+    User Commands:
+    14. available_courses: Display the list of available courses.
+    15. student_information: View your information.
+    16. select_course: Select a course from the available courses.
+    17. remove_course: Remove a course from your selection.
+    18. student_average: Calculate your average grade.
+    
+    Note: Please enter the corresponding command number to execute the desired operation."""
     return a
 
 def about():
-    a = "\nthis is a test for our about function to show that."
-    return a
+    about_text = """
+        \nUniversity Project Management System - About
+        
+        The University Project Management System is a Python-based application developed for managing university courses, student enrollment, and grading. It provides separate functionalities for administrators and students to perform their respective tasks.
+        
+        This project is developed as part of a university project and is intended for educational purposes. It demonstrates the use of object-oriented programming principles, SQL database integration, and command-line user interfaces.
+        
+        For any inquiries or feedback, please contact the project developers.
+    """
+    return about_text
 
 
 def student_level():
