@@ -1,9 +1,23 @@
 """
+This script is used to create database tables for our application. By running this script, the necessary tables are created in the specified database.
 
-    this script is for our tables and work with these.
-    whit run this script the tables are created.
+To use this script, make sure you have the appropriate database connection details configured in the 'server' and 'database' variables within the script. Modify these variables to match your environment.
+
+The script defines a function called 'create_tables' that performs the following steps:
+1. Establishes a connection to the database using the provided connection details.
+2. Defines a list of SQL queries, each representing a table creation query.
+3. Executes the table creation queries using a cursor.
+4. Commits the changes to persist the newly created tables.
+5. Closes the cursor and connection.
+
+If any error occurs during the table creation process, it will be caught and displayed.
+
+Note: The script assumes the presence of the pyodbc library for connecting to the SQL Server database.
+
+After running the script, check your database to verify that the tables have been successfully created.
 
 """
+
 import pyodbc
 
 def create_tables():
@@ -92,8 +106,6 @@ def create_tables():
     connection.close()
     # end of function
 
-# Call the function to create the tables
-# create_tables()
 
 
 

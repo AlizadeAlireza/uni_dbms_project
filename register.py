@@ -1,3 +1,29 @@
+"""
+This script includes classes for user registration and validation.
+
+The script includes the following main components:
+
+1. Import statements: It imports necessary variables and classes from other modules.
+
+2. Register class: The `Register` class is the base class for user registration. It has attributes for username and password.
+
+3. AdminRegister class: The `AdminRegister` class inherits from the `Register` class. It provides functionality to validate admin credentials. It compares the provided username and password with the values stored in the `admin_username` and `admin_password` variables from the `helper_script` module. If the credentials match, it returns `True`, indicating a successful validation.
+
+4. StudentRegister class: The `StudentRegister` class also inherits from the `Register` class. It provides functionality to validate student credentials. It retrieves the student's information from the database by executing a query with the provided student ID (password) and verifies that the username matches the retrieved student name. If the validation is successful, it returns a tuple containing `True` and the student ID.
+
+5. Helper script: The `helper_script` module contains the `admin_username` and `admin_password` variables, which store the admin's username and password, respectively.
+
+The `AdminRegister` and `StudentRegister` classes take username and password as input parameters in their constructor and inherit the `username` and `password` attributes from the `Register` class.
+
+The `admin_validate` method in the `AdminRegister` class validates the admin's credentials by comparing the provided username and password with the stored admin username and password.
+
+The `student_validate` method in the `StudentRegister` class validates the student's credentials by retrieving the student's information from the database and comparing the provided username with the retrieved student name.
+
+Note: The script assumes the existence of the `helper_script` module and the `Connection` class from the `connections` module. It also assumes the presence of a database connection and appropriate table structures for retrieving student information.
+
+"""
+
+
 from helper_script import admin_username, admin_password
 from connections import Connection
 

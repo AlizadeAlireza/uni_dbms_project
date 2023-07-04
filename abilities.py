@@ -1,3 +1,36 @@
+"""
+This script defines the Ability classes for the admin and student users in a student project.
+
+The script includes the following classes:
+
+1. Abilitiy: The base class that contains common abilities for both admin and student users.
+    - select_course(student_id): Allows a user to select a course and add the grade to the STCOT table.
+    - remove_course(student_id): Allows a user to remove a course from the STCOT table.
+    - student_average(student_id): Calculates and displays the average grade for a specific student.
+
+2. AdminAbility(Abilitiy): Inherits from the Ability class and includes additional abilities specific to the admin user.
+    - remove_default_course(): Allows the admin to remove a default course from the COT table.
+    - add_course(): Allows the admin to add a new course to the COT table.
+    - add_student(): Allows the admin to add a new student to the STT table.
+    - add_professor(): Placeholder method for adding a new professor (implementation is missing).
+    - total_average(): Calculates and displays the average grade for all students.
+
+3. StudentAbility(Abilitiy): Inherits from the Ability class and includes additional abilities specific to the student user.
+
+The script also imports the following helper functions and classes:
+
+- department_id(): Prompts the user to select a department and returns the corresponding department ID.
+- lesson_type(): Prompts the user to select a lesson type and returns the corresponding type.
+- student_level(): Prompts the user to select a student level and returns the corresponding level.
+- Connection: A class for handling database connections (implementation is missing).
+
+These classes and methods provide the functionality and abilities for the admin and student users in the student project.
+
+Note: The script does not provide a complete implementation of the project's logic. It only includes the ability classes and some placeholder methods.
+
+"""
+
+
 from helper_script import department_id, lesson_type, student_level
 from connections import Connection
 

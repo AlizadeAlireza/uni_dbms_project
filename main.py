@@ -1,3 +1,31 @@
+"""
+This script implements the main logic for a student project.
+
+The script includes the following main components:
+
+1. Import statements: It imports necessary modules and classes for the project.
+
+2. Main function: The main entry point of the script. It contains a loop that displays the main menu and handles user choices.
+
+3. Menu class: The Menu class provides methods to display different menus, such as the main menu, register menu, admin register menu, user register menu, and help/about menu.
+
+4. Register classes: The Register, AdminRegister, and StudentRegister classes handle user registration functionalities.
+
+5. Tables module: The create_tables function is used to create necessary database tables for the project.
+
+6. Ability classes: The Abilitiy, AdminAbility, and StudentAbility classes define various abilities that users can perform, such as selecting courses, removing courses, calculating averages, adding students, and more.
+
+7. User classes: The Admin and Student classes represent the admin and student users, respectively. They include methods for validating user credentials and accessing specific functionalities.
+
+8. Helper script: The helper_script module includes helper functions for handling department IDs, lesson types, and student levels.
+
+The main function sets up an infinite loop that displays the main menu and prompts the user for choices. Based on the user's choice, the script performs various actions, such as user registration, accessing different menus, performing admin or student-related functionalities, and displaying help/about information.
+
+Note: The script assumes the existence of other modules, classes, and functions required for the project. Some of the implementation details and missing parts are not included in the script. This docstring provides an overview of the script's main components and functionalities.
+
+"""
+
+
 # imports
 import msvcrt
 from menu import Menu

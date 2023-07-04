@@ -1,8 +1,26 @@
-# this is the first commit for upload and create this repository
+"""
+This script defines a `Connection` class for establishing and managing a database connection using the `pyodbc` module.
 
-# imports
+The script includes the following main components:
+
+1. Import statement: It imports the `pyodbc` module for working with ODBC connections.
+
+2. Connection class: The `Connection` class provides methods for managing the database connection. It has the following methods:
+   - `connection_test`: This method tests the connection by attempting to execute a test query. It prints a success message if the connection is established and the test query returns the expected result.
+   - `_open`: This private method opens the database connection by creating a connection string and using it to establish a connection. It returns a cursor object and the connection object.
+   - `_close`: This private method closes the database connection by closing the cursor and the connection.
+   - `_execute`: This private method executes a query with optional parameter values. It takes a cursor, connection, query string, and values as input. If values are provided, it executes the query with the values and commits the changes to the database. If no values are provided, it executes the query without any parameterization.
+   - `_fetch`: This private method fetches the results of a query from the cursor and prints them.
+
+The `Connection` class provides a convenient way to establish a database connection, execute queries, and handle query results. It assumes the presence of a SQL Server and a database named `uni__project` on the local machine, and it uses Windows Authentication for connecting to the server.
+
+To use the `Connection` class, create an instance of the class and call the appropriate methods based on your requirements.
+
+Note: The script assumes that the `pyodbc` module is installed and available for import.
+
+"""
+
 import pyodbc
-
 
 # Connection
 class Connection:
@@ -10,8 +28,6 @@ class Connection:
         # connection details
         server = "MSI"
         database = "uni__project"
-        # username = "MSI\pc"
-        # password = ""
 
         # create connection with f String --> f""
         connection_string = f"Driver={{SQL Server}};Server={server};Database={database};Trusted_Connection=yes"

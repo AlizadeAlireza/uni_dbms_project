@@ -1,8 +1,24 @@
-'''
-    in this script we want to create a menu class and use it in our logics.
-    the different parts of our std_project for terminal user interface.
+"""
+This script defines a Menu class that represents the different parts of a student project's terminal user interface.
 
-'''
+The Menu class provides various methods to display different menus and options to the user. Here's an overview of the available menus:
+
+1. main_menu(): Displays the main menu options, including registration, help/about, and program exit.
+
+2. register_menu(): Displays the register menu options, allowing the user to choose between admin and user registration or go back to the main menu.
+
+3. user_register_menu(): Displays the options available in the student panel, such as viewing available courses, showing information, selecting/removing courses, calculating average, or going back to the register menu.
+
+4. admin_register_menu(): Displays the options available in the admin panel, such as viewing available courses, adding/removing courses, showing student information, managing student courses, adding/removing students, calculating averages, or going back to the register menu.
+
+5. help_about_menu(): Displays the options available in the help/about menu, including accessing help, information about the program, or going back to the main menu.
+
+To use the Menu class, create an instance of the class and call the appropriate method to display the desired menu.
+
+Note: The script does not handle user input or implement the functionality for each menu option. It only provides the menu display functionality.
+
+"""
+
 
 class Menu:
     ## main menu

@@ -1,3 +1,30 @@
+"""
+This script provides functions and variables related to user input and helper functions for a student project.
+
+The script includes the following functions:
+
+1. department_id(): Prompts the user to select a department and returns the corresponding department ID based on the input.
+
+2. lesson_type(): Prompts the user to select a lesson type and returns the corresponding type (amali/nazari) based on the input.
+
+3. help(): Returns a string containing a test message for the help function.
+
+4. about(): Returns a string containing a test message for the about function.
+
+5. student_level(): Prompts the user to select a student level and returns the corresponding level (bs/phd/ms) based on the input.
+
+The script also includes the following variables:
+
+1. admin_username: Represents the username for an admin user.
+2. admin_password: Represents the password for an admin user.
+
+These functions and variables can be used as part of the student project's functionality.
+
+Note: The script does not provide a complete implementation of the project's logic. It only includes the user input functions and test helper functions.
+
+"""
+
+
 admin_username = "admin"
 admin_password = "admin"
 
