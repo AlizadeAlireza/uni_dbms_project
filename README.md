@@ -1,3 +1,66 @@
+# University Project
+
+This repository contains a Python-based university project management system. It provides functionalities for registering administrators and students, managing courses, and performing various operations related to student enrollment, course selection, and grading.
+
+## Features
+
+- **Admin Panel**: Allows administrators to manage courses, add and remove students, view student information, calculate average grades, and perform other administrative tasks.
+- **User Panel**: Allows students to view available courses, select and remove courses, view their own information, calculate their average grades, and perform other user-specific operations.
+- **Help/About**: Provides information about the system and its functionalities, as well as guidance on how to use the system effectively.
+- **Database Connection**: Utilizes the `pyodbc` module to establish a connection with a SQL Server database for storing and retrieving data.
+
+## Prerequisites
+
+- Python 3.7 or above
+- `pyodbc` module
+- SQL Server with a database named `uni__project`
+- Windows operating system (for Windows Authentication with SQL Server)
+
+## Installation
+
+1. Clone the repository:
+
+   ```shell
+   git clone https://github.com/AlizadeAlireza/uni_dbms_project.git
+
+2. Install the required dependencies. In the project directory, run:
+    ```shell
+    pip install pyodbc
+
+3. Set up the SQL Server connection:
+
+Ensure that you have SQL Server installed and running.
+Create a database named uni__project.
+Modify the connection details in the connections.py script to match your SQL Server configuration.
+
+    ```shell
+    python main.py
+
+
+
+## Usage
+
+1. Upon running the application, you will be presented with a main menu.
+
+2. Choose the desired option:
+
+    - Register: Allows you to sign in as an administrator or student.
+
+    - Help/About: Provides information and assistance on using the system.
+
+    - Exit: Terminates the application.
+
+3. Follow the prompts and navigate through the different menus to perform the desired operations.
+
+Contributing
+
+Contributions to the university project system are welcome! If you encounter any issues, have suggestions for improvements, or would like to add new features, please feel free to open an issue or submit a pull request.
+
+License
+This project is licensed under the MIT License.
+
+
+
 Objects : 
 
 1, connection  
