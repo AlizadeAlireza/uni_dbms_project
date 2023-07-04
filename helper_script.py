@@ -56,6 +56,20 @@ def lesson_type():
     except:
         print("\nthere is no such lesson type!")
 
+def student_level():
+    level = input(" \nselect the level: 1, bs / 2, phd / 3, ms: ")
+    try:
+        if level == "1":
+            stu_level = "bs"
+        elif level == "2":
+            stu_level = "phd"
+        elif level == "3":
+            stu_level = "ms"
+        return stu_level
+    except:
+        return "there is no such DEPARTMENT!"
+
+
 def help():
     help_text = """\nUniversity Project Management System Help
     
@@ -85,7 +99,7 @@ def help():
     18. student_average: Calculate your average grade.
     
     Note: Please enter the corresponding command number to execute the desired operation."""
-    return a
+    return help_text
 
 def about():
     about_text = """
@@ -98,17 +112,3 @@ def about():
         For any inquiries or feedback, please contact the project developers.
     """
     return about_text
-
-
-def student_level():
-    level = input(" \nselect the level: 1, bs / 2, phd / 3, ms: ")
-    try:
-        if level == "1":
-            stu_level = "bs"
-        elif level == "2":
-            stu_level = "phd"
-        elif level == "3":
-            stu_level = "ms"
-        return stu_level
-    except:
-        return "there is no such DEPARTMENT!"
