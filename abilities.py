@@ -1,4 +1,4 @@
-from helper_script import department_id, lesson_type
+from helper_script import department_id, lesson_type, student_level
 from connections import Connection
 
 class Abilitiy:
@@ -61,24 +61,32 @@ class AdminAbility(Abilitiy):
     def add_course(self):
         database_connection = Connection()
 
-        type = lesson_type()
-        de_id = department_id()
-        title = input(" title : ")
-        credit = input (" credit ")
-        
-        query = "INSERT INTO COT (CODEID, CoTitle, Credit, COtype) VALUES (?,?,?,?)"
-        values = (de_id, title, credit, type)
+        try:
+            type = lesson_type()
+            de_id = department_id()
+            title = input("title : ")
+            credit = input ("credit:  ")
+            
+            query = "INSERT INTO COT (CODEID, CoTitle, Credit, COtype) VALUES (?,?,?,?)"
+            values = (de_id, title, credit, type)
 
-        cursor, connection = database_connection._open()
-        database_connection._execute(cursor, connection, query, values)
-        database_connection._close(cursor,connection)
+            cursor, connection = database_connection._open()
+            database_connection._execute(cursor, connection, query, values)
+            database_connection._close(cursor,connection)
+            
+            print("\nCourse added successfully!")
+
+        except Exception as e:
+            print("An error occurred while adding the course:")
+            print(e)
+
 
     def add_student(self):
         database_connection = Connection()
 
-        name = input(" name : ")
-        major = input (" major ")
-        level = input (" bs / phd / ms ") # hint : helper function
+        name = input("name : ")
+        major = input("major: ")
+        level = student_level() # hint : helper function
         de_id = department_id()
         query = "INSERT INTO STT (STName, STMJR, STLev, STDEID) VALUES (?,?,?,?)"
         values = (name, major, level, de_id)

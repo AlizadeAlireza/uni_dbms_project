@@ -2,7 +2,7 @@
 import msvcrt
 from menu import Menu
 from register import Register, AdminRegister, StudentRegister
-from tables import create_table
+from tables import create_tables
 from abilities import Abilitiy, AdminAbility, StudentAbility
 from users import Admin, Student
 from helper_script import help, about
@@ -37,8 +37,9 @@ def main():
                     if valid_admin == True:
                         print("\ngoing to admin panel..")
                         menu.admin_register_menu()
-                    # hint : re-enter, back to menu, (select enter password)
-                    
+                    else: 
+                        print("\nwrong info for admin register")
+                        break
                     while True:
                         choice = int(input("\nplease enter your option: "))
                         if choice == 1:
@@ -135,9 +136,11 @@ def main():
                     print("\nback to main menu...")
                     break
 
-                
         elif choice == 3:
             print("\n*** good luck ***")
             break    
+        else:
+            print("\n*** wrong choice ***")
+            menu.main_menu()
 
 main()
