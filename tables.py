@@ -1,23 +1,17 @@
 """
 
-    this script is for our tables and work with these
+    this script is for our tables and work with these.
+    whit run this script the tables are created.
 
 """
 import pyodbc
-
-
-def create_table():
-    pass
-
 
 def create_tables():
     # Connection details
     server = "MSI"
     database = "uni__project"
-
     # Create connection string
     connection_string = f"Driver={{SQL Server}};Server={server};Database={database};Trusted_Connection=yes"
-
     # Establish a connection
     connection = pyodbc.connect(connection_string)
     cursor = connection.cursor()
@@ -82,10 +76,6 @@ def create_tables():
         foreign key (PRID) references PROF(PRID),
         foreign key (COID) references COT(COID)
     )"""
-
-
-
-    
 ]
 
     try:
