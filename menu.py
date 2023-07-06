@@ -64,7 +64,8 @@ class Menu:
         print("8. add student")
         print("9. getting all students average")
         print("10. getting student average")
-        print("11. back to register menu")    
+        print("11. getting table")
+        print("12. back to register menu")    
 
     def help_about_menu(self):
         print("\n *** help/about menu ***\n")

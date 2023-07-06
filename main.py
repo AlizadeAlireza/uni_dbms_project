@@ -80,7 +80,8 @@ def main():
                             admin.remove_default_course()
                             menu.admin_register_menu()
                         elif choice == 4:
-                            admin.student_information()
+                            student_id = int(input("\nenter student id: "))
+                            admin.student_information(student_id)
                             menu.admin_register_menu()
                         elif choice == 5:
                             student_id = int(input("\nenter student id: "))
@@ -105,6 +106,10 @@ def main():
                             admin.student_average(student_id)
                             menu.admin_register_menu()
                         elif choice == 11:
+                            # table_name = int(input("\nenter student id: "))
+                            admin.show_tables()
+                            menu.admin_register_menu()
+                        elif choice == 12:
                             print("\nback to register menu...")
                             break
                 elif choice == 2:
@@ -124,7 +129,7 @@ def main():
                             user.available_courses()
                             menu.user_register_menu()
                         elif choice == 2:
-                            user.student_information()
+                            user.student_information(user_id)
                             menu.user_register_menu()
                         elif choice == 3:
                             user.select_course(user_id)

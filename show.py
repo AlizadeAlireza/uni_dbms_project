@@ -29,9 +29,9 @@ class Show:
         database_connection._close(cursor,connection)
         # it is about fetching all the cources and print it
 
-    def student_information(self):
+    def student_information(self, student_id):
         database_connection = Connection()
-        value = int(input("\n enter the student ID: "))
+        value = student_id
         query = f"SELECT * FROM STT WHERE STT.STID = {value}"
         cursor, connection = database_connection._open()
         database_connection._execute(cursor, connection, query, "")

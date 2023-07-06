@@ -176,15 +176,15 @@ class AdminAbility(Abilitiy):
         except Exception as e:
             print("An error occurred while calculating the average.")
             print(e)
-    # def remove_student(self, student_id):
-    #     database_connection = Connection()
+    def remove_student(self, student_id):
+        database_connection = Connection()
 
-    #      # hint : helper function
-    #     delete_query = "DELETE FROM STT WHERE STT.STID = ?"
-    #     values = (student_id)
-    #     cursor, connection = database_connection._open()
-    #     database_connection._execute(cursor, connection, delete_query, values)
-    #     database_connection._close(cursor,connection)
+         # hint : helper function
+        delete_query = "DELETE FROM STT WHERE STT.STID = ?"
+        values = (student_id)
+        cursor, connection = database_connection._open()
+        database_connection._execute(cursor, connection, delete_query, values)
+        database_connection._close(cursor,connection)
     
 
 class StudentAbility(Abilitiy):

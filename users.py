@@ -24,14 +24,15 @@ from register import AdminRegister, Register, StudentRegister
 from show import AdminShow, UserShow
 
 class User:
-    def __init__(self, username, password):
-        super().__init__(username, password)
+    # def __init__(self, username, password):
+    #     super().__init__(username, password)
+    pass
 
-class Admin(User, AdminRegister, AdminShow, AdminAbility):
+class Admin(User,  AdminRegister, AdminShow, AdminAbility):
     def __init__(self, username, password):
         super().__init__(username, password)
     
 
-class Student(User, StudentRegister, UserShow, StudentAbility):
+class Student(User,  StudentRegister, UserShow, StudentAbility):
     def __init__(self, username, password):
         super().__init__(username, password)
